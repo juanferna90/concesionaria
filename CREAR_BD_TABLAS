@@ -3,25 +3,25 @@ CREATE DATABASE concesionaria;
 
 -- Crear tablas
 CREATE TABLE AUTOS (
-	id_patente varchar(10) NOT NULL,
+	id_patente varchar(10) NOT NULL PRIMARY KEY,
     marca varchar(40) NOT NULL,
-    Año int,
-    precio decimal(15, 2),
-    color varchar(20),
-    combustible varchar(20),
-    carroceria varchar (20)
+    Año int NOT NULL,
+    precio decimal(15, 2) NOT NULL,
+    color varchar(20) NOT NULL,
+    combustible varchar(20) NOT NULL,
+    carroceria varchar (20) NOT NULL
 );
 
 CREATE TABLE AGENCIA (
-	id_agencia int NOT NULL,
+	id_agencia int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nombre varchar(20) NOT NULL,
-    ubicacion varchar(20),
-    patente varchar (10),
-    legajo int
+    ubicacion varchar(20) NOT NULL,
+    patente varchar (10) NOT NULL,
+    legajo int NOT NULL
 );
 
 CREATE TABLE EMPLEADOS (
-	id_legajo int NOT NULL,
+	id_legajo int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nombre varchar (20) NOT NULL,
     apellido varchar (20) NOT NULL,
     correo varchar(50),
@@ -29,7 +29,7 @@ CREATE TABLE EMPLEADOS (
 );
 
 CREATE TABLE VENTAS (
-	id_ventas int NOT NULL,
+	id_ventas int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     dni int NOT NULL,
     monto decimal (10, 2),
     patente varchar(10),
@@ -39,7 +39,7 @@ CREATE TABLE VENTAS (
 );
 
 CREATE TABLE CLIENTES (
-	id_dni int NOT NULL,
+	id_dni int NOT NULL PRIMARY KEY,
     nombre varchar (20) NOT NULL,
     apellido varchar (20) NOT NULL,
     telefono int,
